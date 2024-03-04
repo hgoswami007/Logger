@@ -26,12 +26,12 @@ public class AbstractData {
 	}
 	public void getScreenshot() throws IOException {
 		System.out.println("Hello==========");
-		File ssfileSrc = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(ssfileSrc, new File("D://Selenium Framework//SeleniumFramework//ss.png"));
+//		File ssfileSrc = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+//		FileUtils.copyFile(ssfileSrc, new File("D://Selenium Framework//SeleniumFramework//ss.png"));
 		
-//		TakesScreenshot ts = (TakesScreenshot)driver;
-//		File source = ts.getScreenshotAs(OutputType.FILE);
-//		File file = new File(System.getProperty("D://Selenium Framework//SeleniumFramework//ss.png"));
-//		FileUtils.copyFile(source, file);
+		TakesScreenshot ts = ((TakesScreenshot)driver);
+		File source = ts.getScreenshotAs(OutputType.FILE);
+		File file = new File("D://Selenium Framework//SeleniumFramework//ss.png");
+		FileUtils.copyFile(source, file);
 	}
 }
