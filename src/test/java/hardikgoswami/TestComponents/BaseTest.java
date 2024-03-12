@@ -41,10 +41,10 @@ public class BaseTest {
 	}
 	
 	
-	public LandingPage launchApplication() throws IOException {
-		driver = initiliazeDriver();
-		LandingPage landingPage = new LandingPage(driver);
-		landingPage.NavigatesToURL();
-		return landingPage;
-	}
+//	public LandingPage launchApplication() throws IOException {
+//		driver = initiliazeDriver();
+//		LandingPage landingPage = new LandingPage(driver);
+//		landingPage.NavigatesToURL();
+//		return landingPage;
+//	}
 }

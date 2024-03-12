@@ -5,7 +5,7 @@
     <classes>
       <class name="hardikgoswami.main.main">
         <methods>
-          <include name="submitOrder"/>
+          <include name="runMethod"/>
         </methods>
       </class> <!-- hardikgoswami.main.main -->
     </classes>

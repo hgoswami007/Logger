@@ -1,0 +1,6 @@
+19:17:37 [main] ERROR hardikgoswami.Abstract.AbstractData - Something is not working in GetAllProductList
+19:17:39 [main] INFO  hardikgoswami.Abstract.AbstractData - User is navigate to URL
+19:17:40 [main] INFO  hardikgoswami.Abstract.AbstractData - Email has been added
+19:17:40 [main] INFO  hardikgoswami.Abstract.AbstractData - Password has been added
+19:17:40 [main] INFO  hardikgoswami.Abstract.AbstractData - User has click on Login button
+19:17:40 [main] INFO  hardikgoswami.Abstract.AbstractData - User has successfully login to the applicaiton

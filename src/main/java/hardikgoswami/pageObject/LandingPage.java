@@ -1,35 +1,52 @@
 package hardikgoswami.pageObject;
-import org.apache.commons.logging.Log;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.apache.logging.log4j.LogManager;
+import haardikgoswami.logger.loggerData;
 import org.apache.logging.log4j.core.Logger;
 
 
 import hardikgoswami.Abstract.AbstractData;
 
 
-public class LandingPage  {	
+public class LandingPage extends AbstractData {	
 	
-//	Logger log = getLog();
+
+	
 	WebDriver driver;
-	 
+	Logger log = new loggerData().getLog();
 	 
 	public LandingPage(WebDriver driver) 
 	{
+		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 	
 	
-	public void loginApplication(String Email, String Password) 
+	
+	public ProductCatalogPage loginApplication(String Email, String Password) 
 	{
-		userEmail.sendKeys(Email);
-		userPassword.sendKeys(Password);
-		loginButton.click();
+		ProductCatalogPage ProductCatalogPage = null;
+		
+		try {
+			userEmail.sendKeys(Email);
+			log.info("Email has been added", Email);
+			userPassword.sendKeys(Password);
+			log.info("Password has been added", Password);
+			loginButton.click();
+			log.info("User has click on Login button");
+			ProductCatalogPage = new ProductCatalogPage(driver);
+			
+		}
+		catch(Exception e){
+			log.error("Something is wrong in login Application methods",e);
+		}
+		log.info("User has successfully login to the applicaiton");
+		
+		return ProductCatalogPage;
+		
 		
 	}
 	@FindBy(id="userEmail")
@@ -45,17 +62,9 @@ public class LandingPage  {
 	
 	public void NavigatesToURL() {
 		driver.get("https://rahulshettyacademy.com/client/");
-//		log.info("User is navigate to URL");
-				
+		log.info("User is navigate to URL");				
 	}
 	
-//	public ProductCatalogPage LoginApplication(String Email,String Password) throws InterruptedException {
-//		userEmail.sendKeys(Email);
-//		userPassword.sendKeys("Password");
-//		Thread.sleep(3000);
-//		LoginButton.click();
-//		ProductCatalogPage productcatalogpage = new ProductCatalogPage(driver);
-//		return productcatalogpage;
-//}
+
 
 }
