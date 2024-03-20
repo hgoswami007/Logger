@@ -94,6 +94,16 @@ public class main  {
 		
 		
 	}
+	
+	@Test(dependsOnMethods="runMethod")   // Called Dependency base on test-case
+	public void verifyOrderHistory() throws IOException {
+		WebDriver driver = bTest.initiliazeDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		LandingPage loginApp = new LandingPage(driver);
+		loginApp.NavigatesToURL();
+		ProductCatalogPage ProductCatalogPage = loginApp.loginApplication("warforpeace50@gmail.com","Test@123");
+		//Navigates to orderPage and Verify
+	}
 
 
 }

@@ -16,6 +16,7 @@ public class LandingPage extends AbstractData {
 	
 	WebDriver driver;
 	Logger log = new loggerData().getLog();
+	public String Email; public String Password;
 	 
 	public LandingPage(WebDriver driver) 
 	{
@@ -57,7 +58,9 @@ public class LandingPage extends AbstractData {
 	
 	@FindBy(id="login")
 	WebElement loginButton;
-//	
+	
+	@FindBy(css="[class*='flyInOut']")
+	WebElement errorMessage;
 
 	
 	public void NavigatesToURL() {
@@ -65,6 +68,12 @@ public class LandingPage extends AbstractData {
 		log.info("User is navigate to URL");				
 	}
 	
-
+	public String  getErrorMessage() {
+		String getText = errorMessage.getText();
+		return getText;
+		
+		
+	}
+		
 
 }
